@@ -1,0 +1,16 @@
+def reverse(para):
+    if not para:
+        return ""
+    words = para.split()
+    first_w = words[0]
+    remaining = ' '.join(words[1:])
+
+    reversed_first_w = first_w[::-1]
+    reversed_remaining = reverse(remaining)
+
+    return reversed_first_w + ' ' + reversed_remaining
+
+para = "A computer is an electric device that is used to do lots of different types of tasks. It has brought a huge revolution in the world of science. 
+There is lots of argument on when exactly the computer started to be used. But at the beginning that was a very large machine with lots of other components. 
+But now you can carry a much more complex laptop on your side bag. This is a huge revolution."
+print(reverse(para))
